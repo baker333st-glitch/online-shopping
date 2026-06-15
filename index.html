@@ -1,0 +1,1625 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new look fashion | premium menswear store - newlookfz</title>
+    <meta name="description" content="new look fashion - premium menswear clothing shop in gorakhpur. shirts, suits, t-shirts & more. 3 branches: bichhiya, neena thapa & jhumila bazar. wholesale available!">
+    <meta name="keywords" content="menswear, fashion, gorakhpur, shirts, suits, wholesale, new look fashion">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230ea5e9' rx='15' width='100' height='100'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='45' font-weight='bold' fill='white'>fz</text></svg>">
+    
+    <style>
+        /* reset & base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --skyblue: #0ea5e9;
+            --skyblue-light: #7dd3fc;
+            --skyblue-dark: #0369a1;
+            --skyblue-50: #f0f9ff;
+            --black: #000000;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --white: #ffffff;
+            --green-600: #16a34a;
+            --green-400: #4ade80;
+            --red-600: #dc2626;
+            --red-400: #f87171;
+            --yellow-400: #facc15;
+            --yellow-500: #eab308;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'segoe ui', roboto, sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        /* scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; }
+        ::-webkit-scrollbar-thumb { background: var(--skyblue); border-radius: 4px; }
+
+        /* animations */
+        @keyframes marquee {
+            0% { transform: translatex(100%); }
+            100% { transform: translatex(-100%); }
+        }
+
+        @keyframes fadeinup {
+            0% { opacity: 0; transform: translatey(30px); }
+            100% { opacity: 1; transform: translatey(0); }
+        }
+
+        @keyframes pulseglow {
+            0%, 100% { box-shadow: 0 0 5px rgba(14,165,233,0.4); }
+            50% { box-shadow: 0 0 20px rgba(14,165,233,0.8); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translatey(0px); }
+            50% { transform: translatey(-10px); }
+        }
+
+        @keyframes slidedown {
+            0% { opacity: 0; transform: translatey(-20px); }
+            100% { opacity: 1; transform: translatey(0); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .animate-marquee {
+            animation: marquee 15s linear infinite;
+        }
+
+        .animate-fadeinup {
+            animation: fadeinup 0.6s ease-out forwards;
+        }
+
+        .animate-pulseglow {
+            animation: pulseglow 2s ease-in-out infinite;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-slidedown {
+            animation: slidedown 0.4s ease-out forwards;
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+
+        /* utility classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-wrap { flex-wrap: wrap; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-1 { gap: 0.25rem; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+        @media (min-width: 640px) {
+            .sm-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 768px) {
+            .md-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+            .md-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+            .md-flex-row { flex-direction: row; }
+            .md-hidden { display: none; }
+            .md-flex { display: flex; }
+        }
+
+        @media (min-width: 1024px) {
+            .lg-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+            .lg-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .hidden { display: none; }
+        .block { display: block; }
+        .inline-block { display: inline-block; }
+        .inline-flex { display: inline-flex; }
+
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .min-h-screen { min-height: 100vh; }
+
+        .text-center { text-align: center; }
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+        .text-6xl { font-size: 3.75rem; }
+        .text-7xl { font-size: 4.5rem; }
+
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-black { font-weight: 900; }
+
+        .tracking-tight { letter-spacing: -0.025em; }
+        .tracking-widest { letter-spacing: 0.1em; }
+
+        .leading-tight { line-height: 1.25; }
+
+        .truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .whitespace-nowrap { white-space: nowrap; }
+        .overflow-hidden { overflow: hidden; }
+        .overflow-y-auto { overflow-y: auto; }
+
+        .rounded { border-radius: 0.25rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+
+        .border { border: 1px solid; }
+        .border-2 { border: 2px solid; }
+        .border-t { border-top: 1px solid; }
+        .border-b { border-bottom: 1px solid; }
+        .border-y { border-top: 1px solid; border-bottom: 1px solid; }
+
+        .p-1 { padding: 0.25rem; }
+        .p-2 { padding: 0.5rem; }
+        .p-3 { padding: 0.75rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+
+        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+
+        .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 0.75rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-10 { margin-bottom: 2.5rem; }
+
+        .mx-4 { margin-left: 1rem; margin-right: 1rem; }
+        .mx-8 { margin-left: 2rem; margin-right: 2rem; }
+        .my-8 { margin-top: 2rem; margin-bottom: 2rem; }
+
+        .ml-2 { margin-left: 0.5rem; }
+
+        .sticky { position: sticky; }
+        .fixed { position: fixed; }
+        .absolute { position: absolute; }
+        .relative { position: relative; }
+
+        .top-0 { top: 0; }
+        .top-2 { top: 0.5rem; }
+        .right-0 { right: 0; }
+        .right-2 { right: 0.5rem; }
+        .right-4 { right: 1rem; }
+        .bottom-4 { bottom: 1rem; }
+        .left-2 { left: 0.5rem; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+
+        .z-10 { z-index: 10; }
+        .z-30 { z-index: 30; }
+        .z-40 { z-index: 40; }
+        .z-50 { z-index: 50; }
+
+        .cursor-pointer { cursor: pointer; }
+        .outline-none { outline: none; }
+        .resize-none { resize: none; }
+        .shrink-0 { flex-shrink: 0; }
+        .flex-1 { flex: 1; }
+        .min-w-0 { min-width: 0; }
+
+        .opacity-0 { opacity: 0; }
+
+        .transition-all { transition: all 0.3s ease; }
+        .transition-colors { transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; }
+        .transition-transform { transition: transform 0.3s ease; }
+        .transition-opacity { transition: opacity 0.3s ease; }
+
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+
+        .line-through { text-decoration: line-through; }
+
+        .backdrop-blur { backdrop-filter: blur(12px); }
+
+        /* colors */
+        .bg-black { background-color: var(--black); }
+        .bg-white { background-color: var(--white); }
+        .bg-gray-900 { background-color: var(--gray-900); }
+        .bg-gray-800 { background-color: var(--gray-800); }
+        .bg-gray-950 { background-color: #030712; }
+        .bg-skyblue { background-color: var(--skyblue); }
+        .bg-skyblue-dark { background-color: var(--skyblue-dark); }
+        .bg-green-600 { background-color: var(--green-600); }
+        .bg-red-600 { background-color: var(--red-600); }
+        .bg-yellow-500 { background-color: var(--yellow-500); }
+
+        .text-white { color: var(--white); }
+        .text-black { color: var(--black); }
+        .text-gray-300 { color: var(--gray-300); }
+        .text-gray-400 { color: var(--gray-400); }
+        .text-gray-500 { color: var(--gray-500); }
+        .text-gray-600 { color: var(--gray-600); }
+        .text-skyblue { color: var(--skyblue); }
+        .text-skyblue-light { color: var(--skyblue-light); }
+        .text-green-400 { color: var(--green-400); }
+        .text-red-400 { color: var(--red-400); }
+        .text-yellow-300 { color: #fde047; }
+        .text-yellow-400 { color: var(--yellow-400); }
+
+        .border-gray-700 { border-color: var(--gray-700); }
+        .border-gray-800 { border-color: var(--gray-800); }
+        .border-skyblue { border-color: var(--skyblue); }
+        .border-red-800 { border-color: #991b1b; }
+        .border-green-800 { border-color: #166534; }
+
+        /* hover states */
+        .hover-bg-skyblue-dark:hover { background-color: var(--skyblue-dark); }
+        .hover-bg-green-700:hover { background-color: #15803d; }
+        .hover-bg-red-600:hover { background-color: var(--red-600); }
+        .hover-bg-gray-700:hover { background-color: var(--gray-700); }
+        .hover-text-white:hover { color: var(--white); }
+        .hover-text-skyblue:hover { color: var(--skyblue); }
+        .hover-text-skyblue-light:hover { color: var(--skyblue-light); }
+        .hover-border-skyblue:hover { border-color: var(--skyblue); }
+        .hover-underline:hover { text-decoration: underline; }
+
+        .group:hover .group-hover-opacity-100 { opacity: 1; }
+        .group:hover .group-hover-scale { transform: scale(1.05); }
+
+        /* special backgrounds */
+        .bg-gradient-hero {
+            background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(3,105,161,0.4) 50%, rgba(0,0,0,0.85) 100%),
+                        url('https://images.pexels.com/photos/6065984/pexels-photo-6065984.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200') center/cover no-repeat;
+        }
+
+        .bg-gradient-skyblue {
+            background: linear-gradient(to right, var(--skyblue-dark), var(--skyblue), var(--skyblue-dark));
+        }
+
+        .bg-gradient-yellow {
+            background: linear-gradient(to right, #ca8a04, var(--yellow-500), #ca8a04);
+        }
+
+        .bg-gradient-branch {
+            background: linear-gradient(to bottom right, rgba(14,165,233,0.2), rgba(14,165,233,0.05));
+        }
+
+        .bg-gradient-section {
+            background: linear-gradient(to bottom, var(--black), #030712, var(--black));
+        }
+
+        .bg-gradient-warning {
+            background: linear-gradient(to right, rgba(127,29,29,0.3), rgba(153,27,27,0.2), rgba(127,29,29,0.3));
+        }
+
+        .bg-gradient-login {
+            background: linear-gradient(135deg, #000 0%, #0c4a6e 50%, #000 100%);
+        }
+
+        /* special opacities */
+        .bg-black-90 { background-color: rgba(0,0,0,0.9); }
+        .bg-black-80 { background-color: rgba(0,0,0,0.8); }
+        .bg-black-60 { background-color: rgba(0,0,0,0.6); }
+        .bg-black-70 { background-color: rgba(0,0,0,0.7); }
+        .bg-skyblue-10 { background-color: rgba(14,165,233,0.1); }
+        .bg-skyblue-20 { background-color: rgba(14,165,233,0.2); }
+        .bg-green-900-50 { background-color: rgba(20,83,45,0.5); }
+        .bg-red-900-50 { background-color: rgba(127,29,29,0.5); }
+        .bg-red-600-20 { background-color: rgba(220,38,38,0.2); }
+        .bg-yellow-500-20 { background-color: rgba(234,179,8,0.2); }
+        .bg-green-500-20 { background-color: rgba(34,197,94,0.2); }
+        .border-skyblue-20 { border-color: rgba(14,165,233,0.2); }
+        .border-skyblue-30 { border-color: rgba(14,165,233,0.3); }
+        .border-skyblue-50 { border-color: rgba(14,165,233,0.5); }
+        .border-red-800-50 { border-color: rgba(153,27,27,0.5); }
+
+        /* buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-skyblue {
+            background-color: var(--skyblue);
+            color: var(--white);
+        }
+        .btn-skyblue:hover {
+            background-color: var(--skyblue-dark);
+        }
+
+        .btn-green {
+            background-color: var(--green-600);
+            color: var(--white);
+        }
+        .btn-green:hover {
+            background-color: #15803d;
+        }
+
+        /* forms */
+        .input {
+            width: 100%;
+            background-color: var(--gray-800);
+            border: 1px solid var(--gray-700);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .input:focus {
+            border-color: var(--skyblue);
+        }
+        .input::placeholder {
+            color: var(--gray-500);
+        }
+
+        .select {
+            background-color: var(--gray-900);
+            border: 1px solid var(--gray-700);
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: var(--white);
+            outline: none;
+            cursor: pointer;
+        }
+        .select:focus {
+            border-color: var(--skyblue);
+        }
+
+        /* product card */
+        .product-card {
+            background-color: var(--gray-900);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--gray-800);
+            transition: border-color 0.3s ease;
+        }
+        .product-card:hover {
+            border-color: rgba(14,165,233,0.5);
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        .product-image {
+            transition: transform 0.3s ease;
+        }
+
+        .aspect-square {
+            aspect-ratio: 1/1;
+        }
+
+        .object-cover {
+            object-fit: cover;
+        }
+
+        .object-contain {
+            object-fit: contain;
+        }
+
+        /* modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--gray-900);
+            border: 1px solid rgba(14,165,233,0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            max-width: 28rem;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        /* navbar mobile */
+        @media (max-width: 767px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+
+        /* loader */
+        .loader {
+            width: 3rem;
+            height: 3rem;
+            border: 4px solid var(--skyblue);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* page sections */
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- main store page -->
+    <div id="store-page" class="page-section active">
+        <!-- navbar -->
+        <nav class="sticky top-0 z-40 bg-black-90 backdrop-blur border-b border-skyblue-20">
+            <div class="container py-3 flex items-center justify-between">
+                <!-- logo -->
+                <div class="flex items-center gap-2 cursor-pointer" onclick="scrolltotop()">
+                    <div class="relative">
+                        <div class="bg-gradient-skyblue rounded-lg p-2 animate-pulseglow">
+                            <span class="text-2xl font-black text-white tracking-tight">fz</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-bold text-skyblue leading-tight">new look</span>
+                        <span class="text-xs font-semibold text-skyblue-light tracking-widest">fashion</span>
+                    </div>
+                </div>
+
+                <!-- desktop nav -->
+                <div class="nav-links items-center gap-6">
+                    <a href="#home" class="text-skyblue hover-text-skyblue-light transition-colors font-medium">home</a>
+                    <a href="#products" class="text-gray-300 hover-text-skyblue transition-colors font-medium">products</a>
+                    <a href="#branches" class="text-gray-300 hover-text-skyblue transition-colors font-medium">branches</a>
+                    <a href="#contact" class="text-gray-300 hover-text-skyblue transition-colors font-medium">contact</a>
+                    <button onclick="showdownloadmodal()" class="bg-skyblue hover-bg-skyblue-dark text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
+                        📱 download app
+                    </button>
+                    <button onclick="showadminpage()" class="text-gray-500 hover-text-skyblue transition-colors text-sm" title="admin login">
+                        🔐
+                    </button>
+                </div>
+
+                <!-- mobile menu button -->
+                <button class="mobile-menu-btn text-skyblue text-2xl" onclick="togglemobilemenu()">
+                    <span id="menu-icon">☰</span>
+                </button>
+            </div>
+
+            <!-- mobile menu -->
+            <div id="mobile-menu" class="hidden bg-black-90 border-t border-skyblue-20 px-4 py-4 flex-col gap-3 animate-slidedown">
+                <a href="#home" onclick="closemobilemenu()" class="text-skyblue font-medium py-2 block">home</a>
+                <a href="#products" onclick="closemobilemenu()" class="text-gray-300 font-medium py-2 block">products</a>
+                <a href="#branches" onclick="closemobilemenu()" class="text-gray-300 font-medium py-2 block">branches</a>
+                <a href="#contact" onclick="closemobilemenu()" class="text-gray-300 font-medium py-2 block">contact</a>
+                <button onclick="showdownloadmodal(); closemobilemenu();" class="bg-skyblue text-white px-4 py-2 rounded-lg font-semibold text-sm text-center">📱 download app</button>
+                <button onclick="showadminpage(); closemobilemenu();" class="text-gray-500 text-sm py-2">🔐 admin</button>
+            </div>
+        </nav>
+
+        <!-- marquee 1 -->
+        <div class="w-full overflow-hidden bg-gradient-skyblue py-3 border-y border-skyblue-30">
+            <div class="animate-marquee whitespace-nowrap">
+                <span class="text-xl font-bold text-white mx-8">🔥 new look fashion — premium menswear collection 🔥</span>
+                <span class="text-xl font-bold text-yellow-300 mx-8">✨ wholesale available ✨</span>
+                <span class="text-xl font-bold text-white mx-8">📍 3 branches in gorakhpur</span>
+                <span class="text-xl font-bold text-yellow-300 mx-8">💰 best prices guaranteed — visit store for more offers!</span>
+                <span class="text-xl font-bold text-white mx-8">📞 contact: 6384038329</span>
+                <span class="text-xl font-bold text-yellow-300 mx-8">🛒 order via whatsapp only — cash on delivery not available</span>
+                <span class="text-xl font-bold text-white mx-8">💎 upi payment accepted</span>
+            </div>
+        </div>
+
+        <!-- hero section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+            <div class="text-center px-4 z-10">
+                <div class="flex justify-center mb-6 animate-float">
+                    <div class="bg-gradient-skyblue rounded-2xl p-4 md:p-6 animate-pulseglow">
+                        <span class="text-5xl md:text-7xl font-black text-white tracking-tight">fz</span>
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 animate-fadeinup">
+                    new look <span class="text-skyblue">fashion</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-skyblue-light font-medium mb-2 animate-fadeinup" style="animation-delay: 0.2s">
+                    premium menswear collection
+                </p>
+                <p class="text-gray-400 text-lg mb-6 animate-fadeinup" style="animation-delay: 0.4s">
+                    shirts • suits • t-shirts • jeans • kurta • ethnic wear
+                </p>
+                <div class="flex flex-wrap justify-center gap-3 animate-fadeinup" style="animation-delay: 0.6s">
+                    <a href="#products" class="btn btn-skyblue text-lg">shop now</a>
+                    <a href="https://wa.me/916394038329?text=hi!%20i%20want%20to%20know%20about%20your%20collection" target="_blank" class="btn btn-green text-lg gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentcolor"><path d="m17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297a11.815 11.815 0 00-8.413-3.488c-6.555 0-11.89 5.335-11.893 11.892 0 2.096.547 4.142 1.588 5.945l-1.688 6.163 6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        whatsapp
+                    </a>
+                </div>
+                <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm animate-fadeinup" style="animation-delay: 0.8s">
+                    <span class="bg-yellow-500-20 text-yellow-400 px-3 py-1 rounded-full font-semibold">🏪 wholesale available</span>
+                    <span class="bg-skyblue-20 text-skyblue px-3 py-1 rounded-full font-semibold">💳 upi payment</span>
+                    <span class="bg-green-500-20 text-green-400 px-3 py-1 rounded-full font-semibold">📱 whatsapp orders</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- marquee 2 -->
+        <div class="bg-gradient-yellow py-2 overflow-hidden">
+            <div class="animate-marquee whitespace-nowrap">
+                <span class="text-lg font-bold text-black mx-8">⚡ wholesale available ⚡</span>
+                <span class="text-lg font-bold text-black mx-8">🎉 visit store for more offers! 🎉</span>
+                <span class="text-lg font-bold text-black mx-8">🚫 cash on delivery not available — whatsapp order only 🚫</span>
+                <span class="text-lg font-bold text-black mx-8">🏷️ filter products: low to high price 🏷️</span>
+                <span class="text-lg font-bold text-black mx-8">⚡ wholesale available ⚡</span>
+            </div>
+        </div>
+
+        <!-- products section -->
+        <section id="products" class="container py-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-2">
+                    our <span class="text-skyblue">collection</span>
+                </h2>
+                <p class="text-gray-400">explore premium menswear at the best prices</p>
+            </div>
+
+            <!-- filters -->
+            <div class="flex flex-wrap gap-3 mb-8 justify-center">
+                <select id="sort-filter" class="select text-sm" onchange="filterproducts()">
+                    <option value="default">sort: default</option>
+                    <option value="low">price: low to high</option>
+                    <option value="high">price: high to low</option>
+                </select>
+                <select id="category-filter" class="select text-sm" onchange="filterproducts()">
+                    <option value="all">all categories</option>
+                    <option value="shirts">shirts</option>
+                    <option value="suits">suits</option>
+                    <option value="casual">casual</option>
+                    <option value="kurta">kurta</option>
+                    <option value="formal">formal</option>
+                    <option value="general">general</option>
+                </select>
+                <select id="stock-filter" class="select text-sm" onchange="filterproducts()">
+                    <option value="all">all stock</option>
+                    <option value="instock">in stock</option>
+                    <option value="outofstock">out of stock</option>
+                </select>
+            </div>
+
+            <!-- products grid -->
+            <div id="products-grid" class="grid grid-cols-1 sm-grid-cols-2 lg-grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- products will be loaded here -->
+            </div>
+        </section>
+
+        <!-- branches section -->
+        <section id="branches" class="bg-gradient-section py-16">
+            <div class="container">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-2">
+                        our <span class="text-skyblue">3 branches</span>
+                    </h2>
+                    <p class="text-gray-400">visit us at any of our gorakhpur locations</p>
+                </div>
+                <div class="grid grid-cols-1 md-grid-cols-3 gap-6">
+                    <!-- main branch -->
+                    <div class="bg-gradient-branch border-2 border-skyblue rounded-2xl p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-skyblue text-white text-xs font-bold px-3 py-1 rounded-bl-lg">main branch</div>
+                        <div class="text-4xl mb-4">🏬</div>
+                        <h3 class="text-xl font-bold text-white mb-2">new look fashion</h3>
+                        <p class="text-skyblue-light font-semibold mb-2">main branch - bichhiya</p>
+                        <p class="text-gray-300 text-sm">📍 bichhiya, gorakhpur</p>
+                        <p class="text-gray-400 text-sm mt-1">📞 6384038329</p>
+                        <p class="text-yellow-400 text-xs mt-3 font-semibold">★ flagship store • complete collection</p>
+                    </div>
+                    <!-- branch 2 -->
+                    <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 hover-border-skyblue transition-colors">
+                        <div class="text-4xl mb-4">🏪</div>
+                        <h3 class="text-xl font-bold text-white mb-2">new look fashion</h3>
+                        <p class="text-skyblue-light font-semibold mb-2">branch 2</p>
+                        <p class="text-gray-300 text-sm">📍 neena thapa, gorakhpur</p>
+                        <p class="text-gray-400 text-sm mt-1">📞 6384038329</p>
+                        <p class="text-yellow-400 text-xs mt-3 font-semibold">★ full range available</p>
+                    </div>
+                    <!-- branch 3 -->
+                    <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 hover-border-skyblue transition-colors">
+                        <div class="text-4xl mb-4">🏪</div>
+                        <h3 class="text-xl font-bold text-white mb-2">new look fashion</h3>
+                        <p class="text-skyblue-light font-semibold mb-2">branch 3</p>
+                        <p class="text-gray-300 text-sm">📍 jhumila bazar, badhahalganj</p>
+                        <p class="text-gray-400 text-sm mt-1">📞 6384038329</p>
+                        <p class="text-yellow-400 text-xs mt-3 font-semibold">★ full range available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- features section -->
+        <section class="container py-16">
+            <div class="grid grid-cols-2 md-grid-cols-4 gap-4">
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 text-center hover-border-skyblue transition-colors">
+                    <div class="text-3xl mb-2">🏪</div>
+                    <h4 class="text-white font-bold text-sm">wholesale</h4>
+                    <p class="text-gray-400 text-xs mt-1">bulk orders welcome</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 text-center hover-border-skyblue transition-colors">
+                    <div class="text-3xl mb-2">💳</div>
+                    <h4 class="text-white font-bold text-sm">upi payment</h4>
+                    <p class="text-gray-400 text-xs mt-1">instant payment</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 text-center hover-border-skyblue transition-colors">
+                    <div class="text-3xl mb-2">📱</div>
+                    <h4 class="text-white font-bold text-sm">whatsapp order</h4>
+                    <p class="text-gray-400 text-xs mt-1">order via chat</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 text-center hover-border-skyblue transition-colors">
+                    <div class="text-3xl mb-2">🏷️</div>
+                    <h4 class="text-white font-bold text-sm">best prices</h4>
+                    <p class="text-gray-400 text-xs mt-1">visit store for offers</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- important notice -->
+        <section class="bg-gradient-warning border-y border-red-800-50 py-6">
+            <div class="container text-center">
+                <p class="text-red-400 font-bold text-lg mb-2">⚠️ important notice</p>
+                <p class="text-gray-300 text-sm">
+                    🚫 <strong>cash on delivery is not available.</strong> orders are accepted through whatsapp only.
+                    payment via upi. for more offers and discounts, please visit our store.
+                </p>
+            </div>
+        </section>
+
+        <!-- contact section -->
+        <section id="contact" class="bg-gradient-section py-16">
+            <div class="container">
+                <h2 class="text-3xl md:text-4xl font-black text-white text-center mb-6">
+                    contact <span class="text-skyblue">us</span>
+                </h2>
+                <div class="grid grid-cols-1 md-grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+                        <h3 class="text-skyblue font-bold text-lg mb-4">📞 get in touch</h3>
+                        <p class="text-gray-300 mb-2">phone: <a href="tel:6384038329" class="text-skyblue hover-underline">6384038329</a></p>
+                        <p class="text-gray-300 mb-4">whatsapp: <a href="https://wa.me/916394038329" class="text-green-400 hover-underline">6394038329</a></p>
+                        <a href="https://wa.me/916394038329?text=hi!%20i%20want%20to%20place%20an%20order" target="_blank" class="btn btn-green gap-2">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentcolor"><path d="m17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297a11.815 11.815 0 00-8.413-3.488c-6.555 0-11.89 5.335-11.893 11.892 0 2.096.547 4.142 1.588 5.945l-1.688 6.163 6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            join whatsapp
+                        </a>
+                    </div>
+                    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+                        <h3 class="text-skyblue font-bold text-lg mb-4">📍 main store</h3>
+                        <p class="text-white font-bold text-lg">new look fashion</p>
+                        <p class="text-gray-300 mt-2">bichhiya, gorakhpur</p>
+                        <p class="text-gray-400 text-sm mt-1">near kmg vatika school</p>
+                        <div class="mt-4 bg-skyblue-10 rounded-lg p-3">
+                            <p class="text-skyblue text-sm font-semibold">🏪 wholesale available</p>
+                            <p class="text-gray-400 text-xs mt-1">contact us for bulk orders and special pricing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="bg-gray-950 border-t border-gray-800 py-8">
+            <div class="container">
+                <div class="flex flex-col md-flex-row items-center justify-between gap-4">
+                    <!-- logo -->
+                    <div class="flex items-center gap-2">
+                        <div class="bg-gradient-skyblue rounded-lg p-1.5 animate-pulseglow">
+                            <span class="text-xl font-black text-white tracking-tight">fz</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-bold text-skyblue leading-tight">new look</span>
+                            <span class="text-xs font-semibold text-skyblue-light tracking-widest">fashion</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-gray-400 text-sm">© 2024 new look fashion (newlookfz). all rights reserved.</p>
+                        <p class="text-gray-500 text-xs mt-1">bichhiya • neena thapa gorakhpur • jhumila bazar badhahalganj</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://wa.me/916394038329" target="_blank" class="bg-green-600 hover-bg-green-700 text-white p-2 rounded-full transition-colors">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentcolor"><path d="m17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297a11.815 11.815 0 00-8.413-3.488c-6.555 0-11.89 5.335-11.893 11.892 0 2.096.547 4.142 1.588 5.945l-1.688 6.163 6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="tel:6384038329" class="bg-skyblue hover-bg-skyblue-dark text-white p-2 rounded-full transition-colors">📞</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- floating admin button -->
+        <button onclick="showadminpage()" class="fixed bottom-4 right-4 z-30 bg-gray-900 border border-gray-700 hover-border-skyblue text-gray-400 hover-text-skyblue p-3 rounded-full shadow-lg transition-all" title="admin panel">
+            <svg class="w-6 h-6" fill="none" stroke="currentcolor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m11 5h-5a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828l-8.586 8.586h-2.828v-2.828l8.586-8.586z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- admin page -->
+    <div id="admin-page" class="page-section min-h-screen">
+        <!-- admin login -->
+        <div id="admin-login" class="min-h-screen flex items-center justify-center p-4 bg-gradient-login">
+            <div class="bg-gray-900 border border-skyblue-30 rounded-2xl p-8 max-w-sm w-full">
+                <div class="flex justify-center mb-6">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-gradient-skyblue rounded-lg p-2 animate-pulseglow">
+                            <span class="text-3xl font-black text-white tracking-tight">fz</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-lg font-bold text-skyblue leading-tight">new look</span>
+                            <span class="text-xs font-semibold text-skyblue-light tracking-widest">fashion</span>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-xl font-bold text-white text-center mb-6">🔐 admin login</h2>
+                <p class="text-gray-400 text-xs text-center mb-4">strict security: otp valid for 10 seconds only</p>
+
+                <!-- credentials step -->
+                <div id="login-credentials" class="flex flex-col gap-4">
+                    <input type="tel" id="login-phone" class="input" placeholder="phone number">
+                    <input type="password" id="login-password" class="input" placeholder="password">
+                    <button onclick="handlelogin()" class="w-full bg-skyblue hover-bg-skyblue-dark text-white py-3 rounded-lg font-bold transition-colors">
+                        login
+                    </button>
+                </div>
+
+                <!-- otp step -->
+                <div id="login-otp" class="hidden flex flex-col gap-4">
+                    <div class="bg-skyblue-10 rounded-lg p-3 text-center">
+                        <p class="text-skyblue text-sm">otp sent to your phone</p>
+                        <p id="otp-timer" class="text-yellow-400 text-xs mt-1">⏰ expires in 10s</p>
+                        <p id="otp-display" class="text-skyblue-light text-lg font-mono font-bold mt-2"></p>
+                    </div>
+                    <input type="text" id="otp-input" class="input text-center text-xl tracking-widest" placeholder="enter 6-digit otp" maxlength="6">
+                    <button onclick="verifyotp()" id="verify-btn" class="w-full bg-skyblue hover-bg-skyblue-dark text-white py-3 rounded-lg font-bold transition-colors">
+                        verify otp
+                    </button>
+                    <button onclick="backtoloein()" class="w-full text-gray-400 hover-text-white text-sm transition-colors">
+                        ← back to login
+                    </button>
+                </div>
+
+                <p id="login-error" class="text-red-400 text-sm text-center mt-3 hidden"></p>
+                <div class="mt-6 text-center">
+                    <button onclick="showstorepage()" class="text-gray-500 hover-text-skyblue text-sm transition-colors">
+                        ← back to store
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- admin dashboard -->
+        <div id="admin-dashboard" class="hidden">
+            <!-- admin navbar -->
+            <nav class="sticky top-0 z-40 bg-gray-950 backdrop-blur border-b border-skyblue-20">
+                <div class="container py-3 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-2">
+                            <div class="bg-gradient-skyblue rounded-lg p-1.5 animate-pulseglow">
+                                <span class="text-xl font-black text-white tracking-tight">fz</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold text-skyblue leading-tight">new look</span>
+                                <span class="text-xs font-semibold text-skyblue-light tracking-widest">fashion</span>
+                            </div>
+                        </div>
+                        <span class="text-skyblue text-sm font-semibold bg-skyblue-10 px-2 py-1 rounded">admin</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="showstorepage()" class="text-gray-400 hover-text-white text-sm transition-colors">view store</button>
+                        <button onclick="logout()" class="bg-red-600-20 hover-bg-red-600 text-red-400 hover-text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            logout
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container py-8">
+                <!-- stats -->
+                <div class="grid grid-cols-2 md-grid-cols-4 gap-4 mb-8">
+                    <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+                        <p class="text-gray-400 text-sm">total products</p>
+                        <p id="stat-total" class="text-3xl font-bold text-white">0</p>
+                    </div>
+                    <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+                        <p class="text-gray-400 text-sm">in stock</p>
+                        <p id="stat-instock" class="text-3xl font-bold text-green-400">0</p>
+                    </div>
+                    <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+                        <p class="text-gray-400 text-sm">out of stock</p>
+                        <p id="stat-outstock" class="text-3xl font-bold text-red-400">0</p>
+                    </div>
+                    <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+                        <p class="text-gray-400 text-sm">on discount</p>
+                        <p id="stat-discount" class="text-3xl font-bold text-yellow-400">0</p>
+                    </div>
+                </div>
+
+                <!-- add product button -->
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-white">product management</h2>
+                    <button onclick="showproductform()" class="bg-skyblue hover-bg-skyblue-dark text-white px-6 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2">
+                        <span class="text-xl">+</span> add product
+                    </button>
+                </div>
+
+                <!-- admin products list -->
+                <div id="admin-products-list" class="flex flex-col gap-4">
+                    <!-- products will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- download modal -->
+    <div id="download-modal" class="hidden modal-overlay" onclick="hidedownloadmodal()">
+        <div class="modal-content" onclick="event.stoppropagation()">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-white">📱 download app</h3>
+                <button onclick="hidedownloadmodal()" class="text-gray-400 hover-text-white text-xl">✕</button>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">get new look fashion app for phone, tab & pc</p>
+            <div class="flex flex-col gap-3">
+                <input type="tel" id="dl-phone" class="input" placeholder="contact number">
+                <input type="email" id="dl-email" class="input" placeholder="email address">
+                <button onclick="handledownload()" class="w-full bg-skyblue hover-bg-skyblue-dark text-white py-3 rounded-lg font-bold transition-colors">
+                    get download link
+                </button>
+                <p id="dl-message" class="text-skyblue text-sm text-center hidden"></p>
+            </div>
+            <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+                <div class="bg-gray-800 rounded-lg p-2">
+                    <p class="text-2xl">📱</p>
+                    <p class="text-xs text-gray-400">phone</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-2">
+                    <p class="text-2xl">📟</p>
+                    <p class="text-xs text-gray-400">tablet</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-2">
+                    <p class="text-2xl">💻</p>
+                    <p class="text-xs text-gray-400">pc/windows</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- product form modal -->
+    <div id="product-form-modal" class="hidden modal-overlay" onclick="hideproductform()">
+        <div class="modal-content max-w-lg my-8 max-h-screen overflow-y-auto" onclick="event.stoppropagation()">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="form-title" class="text-xl font-bold text-white">➕ add new product</h3>
+                <button onclick="hideproductform()" class="text-gray-400 hover-text-white text-xl">✕</button>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div>
+                    <label class="text-gray-400 text-sm block mb-1">product name *</label>
+                    <input type="text" id="form-name" class="input" placeholder="e.g. premium cotton shirt">
+                </div>
+                <div>
+                    <label class="text-gray-400 text-sm block mb-1">article code</label>
+                    <input type="text" id="form-article" class="input" placeholder="e.g. nlf-001">
+                </div>
+                <div>
+                    <label class="text-gray-400 text-sm block mb-1">description</label>
+                    <textarea id="form-description" class="input h-20 resize-none" placeholder="product description..."></textarea>
+                </div>
+                <div>
+                    <label class="text-gray-400 text-sm block mb-1">image url</label>
+                    <input type="text" id="form-image" class="input text-sm" placeholder="https://example.com/image.jpg">
+                    <div id="form-image-preview" class="mt-2 hidden">
+                        <img id="preview-img" src="" alt="preview" class="w-24 h-24 object-cover rounded-lg border border-gray-700">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-gray-400 text-sm block mb-1">price (₹) *</label>
+                        <input type="number" id="form-price" class="input" placeholder="999">
+                    </div>
+                    <div>
+                        <label class="text-gray-400 text-sm block mb-1">discount price (₹)</label>
+                        <input type="number" id="form-discount" class="input" placeholder="799">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-gray-400 text-sm block mb-1">sizes (comma separated)</label>
+                    <input type="text" id="form-sizes" class="input" placeholder="s,m,l,xl,xxl" value="s,m,l,xl,xxl">
+                </div>
+                <div>
+                    <label class="text-gray-400 text-sm block mb-1">category</label>
+                    <select id="form-category" class="input">
+                        <option value="general">general</option>
+                        <option value="shirts">shirts</option>
+                        <option value="t-shirts">t-shirts</option>
+                        <option value="suits">suits</option>
+                        <option value="jeans">jeans</option>
+                        <option value="kurta">kurta</option>
+                        <option value="ethnic">ethnic wear</option>
+                        <option value="formal">formal wear</option>
+                        <option value="casual">casual wear</option>
+                        <option value="accessories">accessories</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-3">
+                    <label class="text-gray-400 text-sm">stock status:</label>
+                    <button type="button" id="form-stock-btn" onclick="togglestockstatus()" class="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors">
+                        ✓ in stock
+                    </button>
+                    <input type="hidden" id="form-instock" value="true">
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="saveproduct()" class="flex-1 bg-skyblue hover-bg-skyblue-dark text-white py-3 rounded-lg font-bold transition-colors">
+                        save product
+                    </button>
+                    <button onclick="hideproductform()" class="px-6 py-3 bg-gray-800 hover-bg-gray-700 text-gray-300 rounded-lg transition-colors">
+                        cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- image zoom modal -->
+    <div id="image-zoom-modal" class="hidden modal-overlay" onclick="hidezoommodal()">
+        <div class="relative max-w-4xl max-h-screen p-4">
+            <img id="zoom-image" src="" alt="zoomed" class="max-w-full max-h-[85vh] object-contain rounded-lg">
+            <button onclick="hidezoommodal()" class="absolute top-2 right-2 bg-black-70 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl hover-bg-red-600 transition-colors">
+                ✕
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ============ data ============
+        let products = [
+            {
+                id: 1,
+                name: "premium cotton formal shirt",
+                description: "high-quality cotton formal shirt with slim fit design. perfect for office and occasions.",
+                imageurl: "https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+                price: 1299,
+                discountprice: 999,
+                sizes: "s,m,l,xl,xxl",
+                category: "shirts",
+                instock: true,
+                articlecode: "nlf-001"
+            },
+            {
+                id: 2,
+                name: "classic men suit set",
+                description: "premium 3-piece suit set. blazer, trouser and vest combination in fine fabric.",
+                imageurl: "https://images.pexels.com/photos/6065984/pexels-photo-6065984.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+                price: 4999,
+                discountprice: 3999,
+                sizes: "m,l,xl,xxl",
+                category: "suits",
+                instock: true,
+                articlecode: "nlf-002"
+            },
+            {
+                id: 3,
+                name: "casual summer collection",
+                description: "trendy casual shirts in vibrant colors. light and comfortable fabric for summer.",
+                imageurl: "https://images.pexels.com/photos/31842962/pexels-photo-31842962.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+                price: 899,
+                discountprice: 699,
+                sizes: "s,m,l,xl",
+                category: "casual",
+                instock: true,
+                articlecode: "nlf-003"
+            },
+            {
+                id: 4,
+                name: "designer ethnic kurta",
+                description: "embroidered ethnic kurta with modern design. perfect for festivals and weddings.",
+                imageurl: "https://images.pexels.com/photos/16199169/pexels-photo-16199169.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+                price: 1999,
+                discountprice: 1499,
+                sizes: "m,l,xl,xxl",
+                category: "kurta",
+                instock: true,
+                articlecode: "nlf-004"
+            },
+            {
+                id: 5,
+                name: "premium tailored blazer",
+                description: "custom-fit blazer with premium stitching. ideal for formal events.",
+                imageurl: "https://images.pexels.com/photos/6765000/pexels-photo-6765000.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+                price: 3499,
+                discountprice: 2799,
+                sizes: "m,l,xl",
+                category: "formal",
+                instock: true,
+                articlecode: "nlf-005"
+            },
+            {
+                id: 6,
+                name: "boutique fashion collection",
+                description: "exclusive boutique fashion wear. limited edition designer pieces.",
+                imageurl: "https://images.pexels.com/photos/12729102/pexels-photo-12729102.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+                price: 2499,
+                discountprice: null,
+                sizes: "s,m,l,xl,xxl",
+                category: "suits",
+                instock: true,
+                articlecode: "nlf-006"
+            },
+            {
+                id: 7,
+                name: "elegant store special",
+                description: "special collection from our flagship store. premium quality guaranteed.",
+                imageurl: "https://images.pexels.com/photos/35045844/pexels-photo-35045844.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+                price: 1799,
+                discountprice: 1399,
+                sizes: "m,l,xl",
+                category: "general",
+                instock: false,
+                articlecode: "nlf-007"
+            },
+            {
+                id: 8,
+                name: "summer shorts collection",
+                description: "colorful casual shorts for summer. multiple styles available.",
+                imageurl: "https://images.pexels.com/photos/30710089/pexels-photo-30710089.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+                price: 699,
+                discountprice: 499,
+                sizes: "s,m,l,xl,xxl",
+                category: "casual",
+                instock: true,
+                articlecode: "nlf-008"
+            }
+        ];
+
+        let isloggedin = false;
+        let editingid = null;
+        let otptimer = null;
+        let otpcode = "";
+        let otptimeout = 10;
+
+        // ============ storage ============
+        function loadproducts() {
+            const saved = localStorage.getItem("newlookfz_products");
+            if (saved) {
+                products = JSON.parse(saved);
+            }
+        }
+
+        function saveproductstostorage() {
+            localStorage.setItem("newlookfz_products", JSON.stringify(products));
+        }
+
+        // ============ navigation ============
+        function showadminpage() {
+            document.getElementById("store-page").classList.remove("active");
+            document.getElementById("admin-page").classList.add("active");
+            if (isloggedin) {
+                document.getElementById("admin-login").classList.add("hidden");
+                document.getElementById("admin-dashboard").classList.remove("hidden");
+                renderadminproducts();
+            } else {
+                document.getElementById("admin-login").classList.remove("hidden");
+                document.getElementById("admin-dashboard").classList.add("hidden");
+            }
+        }
+
+        function showstorepage() {
+            document.getElementById("admin-page").classList.remove("active");
+            document.getElementById("store-page").classList.add("active");
+            renderproducts();
+        }
+
+        function scrolltotop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function togglemobilemenu() {
+            const menu = document.getElementById("mobile-menu");
+            const icon = document.getElementById("menu-icon");
+            if (menu.classList.contains("hidden")) {
+                menu.classList.remove("hidden");
+                menu.classList.add("flex");
+                icon.textContent = "✕";
+            } else {
+                menu.classList.add("hidden");
+                menu.classList.remove("flex");
+                icon.textContent = "☰";
+            }
+        }
+
+        function closemobilemenu() {
+            const menu = document.getElementById("mobile-menu");
+            const icon = document.getElementById("menu-icon");
+            menu.classList.add("hidden");
+            menu.classList.remove("flex");
+            icon.textContent = "☰";
+        }
+
+        // ============ products rendering ============
+        function renderproducts() {
+            const grid = document.getElementById("products-grid");
+            const sortfilter = document.getElementById("sort-filter").value;
+            const categoryfilter = document.getElementById("category-filter").value;
+            const stockfilter = document.getElementById("stock-filter").value;
+
+            let filtered = [...products];
+
+            // filter by category
+            if (categoryfilter !== "all") {
+                filtered = filtered.filter(p => p.category.toLowerCase() === categoryfilter);
+            }
+
+            // filter by stock
+            if (stockfilter === "instock") {
+                filtered = filtered.filter(p => p.instock);
+            } else if (stockfilter === "outofstock") {
+                filtered = filtered.filter(p => !p.instock);
+            }
+
+            // sort
+            if (sortfilter === "low") {
+                filtered.sort((a, b) => (a.discountprice || a.price) - (b.discountprice || b.price));
+            } else if (sortfilter === "high") {
+                filtered.sort((a, b) => (b.discountprice || b.price) - (a.discountprice || a.price));
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-20">
+                        <p class="text-6xl mb-4">👔</p>
+                        <p class="text-gray-400 text-lg">no products found. check back soon!</p>
+                        <p class="text-skyblue mt-2">visit our store for more collection</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(p => createproductcard(p)).join("");
+        }
+
+        function createproductcard(product) {
+            const discount = product.discountprice 
+                ? Math.round(((product.price - product.discountprice) / product.price) * 100) 
+                : 0;
+            const whatsappmsg = encodeURIComponent(`hi! i'm interested in "${product.name}" (article: ${product.articlecode || "n/a"}) priced at ₹${product.discountprice || product.price}. please share details.`);
+            const whatsapplink = `https://wa.me/916394038329?text=${whatsappmsg}`;
+
+            return `
+                <div class="product-card group">
+                    <div class="relative aspect-square bg-gray-800 cursor-pointer overflow-hidden" onclick="showzoommodal('${product.imageurl}')">
+                        ${product.imageurl ? `<img src="${product.imageurl}" alt="${product.name}" class="product-image w-full h-full object-cover">` : `
+                            <div class="w-full h-full flex items-center justify-center text-gray-600">
+                                <svg class="w-16 h-16" fill="none" stroke="currentcolor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m4 16l4.586-4.586a2 2 0 012.828 0l4.586 4.586m-2-2l1.586-1.586a2 2 0 012.828 0l2.586 2.586m-6-6h.01m-10 4h12a2 2 0 002-2v-8a2 2 0 00-2-2h-12a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                        `}
+                        ${!product.instock ? `
+                            <div class="absolute inset-0 bg-black-60 flex items-center justify-center">
+                                <span class="bg-red-600 text-white px-4 py-2 rounded-full font-bold text-sm">out of stock</span>
+                            </div>
+                        ` : ""}
+                        ${discount > 0 ? `<div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 rounded text-xs font-bold">${discount}% off</div>` : ""}
+                        ${product.imageurl ? `
+                            <div class="absolute top-2 right-2 bg-black-60 text-white p-1 rounded-full opacity-0 group-hover-opacity-100 transition-opacity">
+                                <svg class="w-5 h-5" fill="none" stroke="currentcolor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zm-7-3v3m0 0v3m0-3h3m-3 0h-3"/>
+                                </svg>
+                            </div>
+                        ` : ""}
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-white font-semibold text-lg truncate">${product.name}</h3>
+                        ${product.articlecode ? `<p class="text-skyblue-light text-xs mt-1">article: ${product.articlecode}</p>` : ""}
+                        ${product.description ? `<p class="text-gray-400 text-sm mt-1 line-clamp-2">${product.description}</p>` : ""}
+                        <div class="flex items-center gap-2 mt-2">
+                            ${product.discountprice ? `
+                                <span class="text-skyblue font-bold text-xl">₹${product.discountprice}</span>
+                                <span class="text-gray-500 line-through text-sm">₹${product.price}</span>
+                            ` : `
+                                <span class="text-skyblue font-bold text-xl">₹${product.price}</span>
+                            `}
+                        </div>
+                        <div class="flex flex-wrap gap-1 mt-2">
+                            ${product.sizes.split(",").map(s => `<span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs border border-gray-700">${s.trim()}</span>`).join("")}
+                        </div>
+                        <div class="flex items-center gap-2 mt-3">
+                            <span class="${product.instock ? "bg-green-900-50 text-green-400 border-green-800" : "bg-red-900-50 text-red-400 border-red-800"} px-2 py-1 rounded text-xs font-semibold border">
+                                ${product.instock ? "✓ in stock" : "✕ out of stock"}
+                            </span>
+                            ${product.category ? `<span class="bg-skyblue-10 text-skyblue px-2 py-1 rounded text-xs">${product.category}</span>` : ""}
+                        </div>
+                        <div class="flex gap-2 mt-3">
+                            <a href="${whatsapplink}" target="_blank" class="flex-1 bg-green-600 hover-bg-green-700 text-white text-center py-2 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentcolor"><path d="m17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297a11.815 11.815 0 00-8.413-3.488c-6.555 0-11.89 5.335-11.893 11.892 0 2.096.547 4.142 1.588 5.945l-1.688 6.163 6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                order now
+                            </a>
+                            <button class="bg-skyblue-20 hover-text-white text-skyblue px-3 py-2 rounded-lg text-sm transition-colors">💳 upi</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function filterproducts() {
+            renderproducts();
+        }
+
+        // ============ admin login ============
+        function handlelogin() {
+            const phone = document.getElementById("login-phone").value;
+            const password = document.getElementById("login-password").value;
+            const error = document.getElementById("login-error");
+
+            if (phone !== "6394038329" || password !== "6394038329") {
+                error.textContent = "invalid credentials";
+                error.classList.remove("hidden");
+                return;
+            }
+
+            error.classList.add("hidden");
+            document.getElementById("login-credentials").classList.add("hidden");
+            document.getElementById("login-otp").classList.remove("hidden");
+            sendotp();
+        }
+
+        function sendotp() {
+            otpcode = Math.floor(100000 + Math.random() * 900000).toString();
+            otptimeout = 10;
+            document.getElementById("otp-display").textContent = "demo otp: " + otpcode;
+            document.getElementById("otp-timer").textContent = "⏰ expires in " + otptimeout + "s";
+            document.getElementById("verify-btn").disabled = false;
+            document.getElementById("verify-btn").classList.remove("bg-gray-700", "text-gray-500");
+            document.getElementById("verify-btn").classList.add("bg-skyblue");
+
+            if (otptimer) clearInterval(otptimer);
+            otptimer = setInterval(() => {
+                otptimeout--;
+                document.getElementById("otp-timer").textContent = otptimeout > 0 ? "⏰ expires in " + otptimeout + "s" : "⚠️ otp expired";
+                if (otptimeout <= 0) {
+                    clearInterval(otptimer);
+                    document.getElementById("verify-btn").disabled = true;
+                    document.getElementById("verify-btn").classList.add("bg-gray-700", "text-gray-500");
+                    document.getElementById("verify-btn").classList.remove("bg-skyblue");
+                }
+            }, 1000);
+        }
+
+        function verifyotp() {
+            const input = document.getElementById("otp-input").value;
+            const error = document.getElementById("login-error");
+
+            if (otptimeout <= 0) {
+                error.textContent = "otp expired. please try again.";
+                error.classList.remove("hidden");
+                return;
+            }
+
+            if (input !== otpcode) {
+                error.textContent = "invalid otp";
+                error.classList.remove("hidden");
+                return;
+            }
+
+            if (otptimer) clearInterval(otptimer);
+            isloggedin = true;
+            document.getElementById("admin-login").classList.add("hidden");
+            document.getElementById("admin-dashboard").classList.remove("hidden");
+            renderadminproducts();
+        }
+
+        function backtoloein() {
+            if (otptimer) clearInterval(otptimer);
+            document.getElementById("login-credentials").classList.remove("hidden");
+            document.getElementById("login-otp").classList.add("hidden");
+            document.getElementById("otp-input").value = "";
+            document.getElementById("login-error").classList.add("hidden");
+        }
+
+        function logout() {
+            isloggedin = false;
+            if (otptimer) clearInterval(otptimer);
+            document.getElementById("login-phone").value = "";
+            document.getElementById("login-password").value = "";
+            document.getElementById("otp-input").value = "";
+            document.getElementById("login-error").classList.add("hidden");
+            document.getElementById("login-credentials").classList.remove("hidden");
+            document.getElementById("login-otp").classList.add("hidden");
+            showstorepage();
+        }
+
+        // ============ admin products ============
+        function renderadminproducts() {
+            const list = document.getElementById("admin-products-list");
+            const total = products.length;
+            const instock = products.filter(p => p.instock).length;
+            const outstock = products.filter(p => !p.instock).length;
+            const ondiscount = products.filter(p => p.discountprice).length;
+
+            document.getElementById("stat-total").textContent = total;
+            document.getElementById("stat-instock").textContent = instock;
+            document.getElementById("stat-outstock").textContent = outstock;
+            document.getElementById("stat-discount").textContent = ondiscount;
+
+            if (products.length === 0) {
+                list.innerHTML = `
+                    <div class="text-center py-16 bg-gray-900 rounded-2xl border border-gray-800">
+                        <p class="text-5xl mb-4">📦</p>
+                        <p class="text-gray-400 text-lg">no products yet</p>
+                        <p class="text-gray-500 text-sm mt-2">click "add product" to get started</p>
+                    </div>
+                `;
+                return;
+            }
+
+            list.innerHTML = products.map(p => `
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col md-flex-row gap-4 items-start hover-border-skyblue transition-colors">
+                    <div class="w-full md:w-24 h-24 bg-gray-800 rounded-lg overflow-hidden shrink-0">
+                        ${p.imageurl ? `<img src="${p.imageurl}" alt="${p.name}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center text-gray-600 text-2xl">👔</div>`}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-start justify-between gap-2 flex-wrap">
+                            <div>
+                                <h3 class="text-white font-semibold truncate">${p.name}</h3>
+                                ${p.articlecode ? `<p class="text-skyblue text-xs">article: ${p.articlecode}</p>` : ""}
+                            </div>
+                            <div class="flex gap-1 shrink-0 flex-wrap">
+                                <button onclick="editproduct(${p.id})" class="bg-skyblue-20 hover-text-white text-skyblue px-3 py-1 rounded text-sm transition-colors">✏️ edit</button>
+                                <button onclick="togglestock(${p.id})" class="${p.instock ? "bg-green-600-20 text-green-400" : "bg-red-600-20 text-red-400"} px-3 py-1 rounded text-sm transition-colors">
+                                    ${p.instock ? "in stock" : "out of stock"}
+                                </button>
+                                <button onclick="deleteproduct(${p.id})" class="bg-red-600-20 hover-bg-red-600 text-red-400 hover-text-white px-3 py-1 rounded text-sm transition-colors">🗑️</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 mt-2">
+                            ${p.discountprice ? `
+                                <span class="text-skyblue font-bold">₹${p.discountprice}</span>
+                                <span class="text-gray-500 line-through text-sm">₹${p.price}</span>
+                                <span class="text-red-400 text-xs font-semibold">${Math.round(((p.price - p.discountprice) / p.price) * 100)}% off</span>
+                            ` : `
+                                <span class="text-skyblue font-bold">₹${p.price}</span>
+                            `}
+                        </div>
+                        <div class="flex flex-wrap gap-1 mt-2">
+                            ${p.sizes.split(",").map(s => `<span class="bg-gray-800 text-gray-400 px-2 py-1 rounded text-xs">${s.trim()}</span>`).join("")}
+                            ${p.category ? `<span class="bg-skyblue-10 text-skyblue px-2 py-1 rounded text-xs ml-2">${p.category}</span>` : ""}
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function showproductform(product = null) {
+            editingid = product ? product.id : null;
+            document.getElementById("form-title").textContent = product ? "✏️ edit product" : "➕ add new product";
+            document.getElementById("form-name").value = product ? product.name : "";
+            document.getElementById("form-article").value = product ? product.articlecode || "" : "";
+            document.getElementById("form-description").value = product ? product.description || "" : "";
+            document.getElementById("form-image").value = product ? product.imageurl || "" : "";
+            document.getElementById("form-price").value = product ? product.price : "";
+            document.getElementById("form-discount").value = product ? product.discountprice || "" : "";
+            document.getElementById("form-sizes").value = product ? product.sizes : "s,m,l,xl,xxl";
+            document.getElementById("form-category").value = product ? product.category : "general";
+            document.getElementById("form-instock").value = product ? product.instock : true;
+
+            const btn = document.getElementById("form-stock-btn");
+            const instock = product ? product.instock : true;
+            btn.textContent = instock ? "✓ in stock" : "✕ out of stock";
+            btn.className = instock ? "bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors" : "bg-red-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors";
+
+            const preview = document.getElementById("form-image-preview");
+            if (product && product.imageurl) {
+                document.getElementById("preview-img").src = product.imageurl;
+                preview.classList.remove("hidden");
+            } else {
+                preview.classList.add("hidden");
+            }
+
+            document.getElementById("product-form-modal").classList.remove("hidden");
+        }
+
+        function hideproductform() {
+            document.getElementById("product-form-modal").classList.add("hidden");
+            editingid = null;
+        }
+
+        function togglestockstatus() {
+            const input = document.getElementById("form-instock");
+            const btn = document.getElementById("form-stock-btn");
+            const current = input.value === "true";
+            const newval = !current;
+            input.value = newval;
+            btn.textContent = newval ? "✓ in stock" : "✕ out of stock";
+            btn.className = newval ? "bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors" : "bg-red-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors";
+        }
+
+        function saveproduct() {
+            const name = document.getElementById("form-name").value.trim();
+            const price = parseInt(document.getElementById("form-price").value);
+
+            if (!name || !price) {
+                alert("name and price are required");
+                return;
+            }
+
+            const productdata = {
+                name: name,
+                articlecode: document.getElementById("form-article").value.trim() || null,
+                description: document.getElementById("form-description").value.trim() || null,
+                imageurl: document.getElementById("form-image").value.trim() || null,
+                price: price,
+                discountprice: parseInt(document.getElementById("form-discount").value) || null,
+                sizes: document.getElementById("form-sizes").value.trim() || "s,m,l,xl,xxl",
+                category: document.getElementById("form-category").value,
+                instock: document.getElementById("form-instock").value === "true"
+            };
+
+            if (editingid) {
+                const index = products.findIndex(p => p.id === editingid);
+                if (index !== -1) {
+                    products[index] = { ...products[index], ...productdata };
+                }
+            } else {
+                const maxid = products.length > 0 ? Math.max(...products.map(p => p.id)) : 0;
+                products.push({ id: maxid + 1, ...productdata });
+            }
+
+            saveproductstostorage();
+            hideproductform();
+            renderadminproducts();
+        }
+
+        function editproduct(id) {
+            const product = products.find(p => p.id === id);
+            if (product) showproductform(product);
+        }
+
+        function deleteproduct(id) {
+            if (!confirm("delete this product?")) return;
+            products = products.filter(p => p.id !== id);
+            saveproductstostorage();
+            renderadminproducts();
+        }
+
+        function togglestock(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                product.instock = !product.instock;
+                saveproductstostorage();
+                renderadminproducts();
+            }
+        }
+
+        // ============ modals ============
+        function showdownloadmodal() {
+            document.getElementById("download-modal").classList.remove("hidden");
+        }
+
+        function hidedownloadmodal() {
+            document.getElementById("download-modal").classList.add("hidden");
+            document.getElementById("dl-message").classList.add("hidden");
+        }
+
+        function handledownload() {
+            const phone = document.getElementById("dl-phone").value;
+            const email = document.getElementById("dl-email").value;
+            const msg = document.getElementById("dl-message");
+
+            if (!phone || !email) {
+                msg.textContent = "please enter both contact number and email";
+                msg.classList.remove("hidden");
+                return;
+            }
+
+            msg.textContent = "✅ registration successful! download link will be sent to your email.";
+            msg.classList.remove("hidden");
+            document.getElementById("dl-phone").value = "";
+            document.getElementById("dl-email").value = "";
+        }
+
+        function showzoommodal(imageurl) {
+            if (!imageurl) return;
+            document.getElementById("zoom-image").src = imageurl;
+            document.getElementById("image-zoom-modal").classList.remove("hidden");
+        }
+
+        function hidezoommodal() {
+            document.getElementById("image-zoom-modal").classList.add("hidden");
+        }
+
+        // ============ image preview ============
+        document.getElementById("form-image").addEventListener("input", function() {
+            const url = this.value.trim();
+            const preview = document.getElementById("form-image-preview");
+            if (url) {
+                document.getElementById("preview-img").src = url;
+                preview.classList.remove("hidden");
+            } else {
+                preview.classList.add("hidden");
+            }
+        });
+
+        // ============ initialize ============
+        document.addEventListener("DOMContentLoaded", function() {
+            loadproducts();
+            renderproducts();
+        });
+    </script>
+</body>
+</html>
